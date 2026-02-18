@@ -1,23 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16 items-center">
+<header class="sticky top-0 z-50  bg-blue-800 text-white">
+  <nav class="flex px-4">
+    <div class="flex w-full justify-between items-center">
 
       <!-- Logo -->
-      <div class="text-xl font-bold text-blue-600">
-        MyApp Image Goes here
-      </div>
 
-      <!-- Desktop Menu -->
+       <img class="size-28 shrink-0 p-1 " src="../static/images/mt-hood-small.jpg" alt="Mt Hood" />
+      
+      <!-- Desktop Menu 
       <div class="hidden md:flex items-center space-x-8">
         <a href="/" class="nav-link">Home</a>
         <a href="#" class="nav-link">Dashboard</a>
         <a href="#" class="nav-link">Settings</a>
         <a href="#" class="nav-link">About</a>
+      </div> -->
+      <div class="text-lg font-bold">Alan McIvor
+      <br>
+        <div class="hidden md:flex font-medium">
+         <a href="/" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Dashboard</a>
+        </div>
       </div>
-
       <!-- Mobile hamburger (HTMX) -->
       <div class="md:hidden">
         <button
@@ -25,7 +30,7 @@
           hx-target="#mobile-menu"
           hx-swap="innerHTML"
           hx-indicator="#menu-spinner"
-          class="p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+          class="p-2 rounded-lg text-blue-300 hover:bg-gray-100"
         >
           ☰
         </button>
