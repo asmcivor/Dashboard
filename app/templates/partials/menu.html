@@ -1,0 +1,28 @@
+<nav class="menu">
+    <h2>My App</h2>
+
+    <a class="{% if active == 'dashboard' %}active{% endif %}"
+       hx-get="/dashboard"
+       hx-target="#content"
+       hx-push-url="true"
+       hx-on::click="htmx.ajax('GET','/menu?active=dashboard','#sidebar')">
+        Dashboard
+    </a>
+
+    <a class="{% if active == 'reports' %}active{% endif %}"
+       hx-get="/reports"
+       hx-target="#content"
+       hx-push-url="true"
+       hx-on::click="htmx.ajax('GET','/menu?active=reports','#sidebar')">
+        Reports
+    </a>
+
+    <a class="{% if active == 'settings' %}active{% endif %}"
+       hx-get="/settings"
+       hx-target="#content"
+       hx-push-url="true"
+       hx-on::click="htmx.ajax('GET','/menu?active=settings','#sidebar')">
+        Settings
+    </a>
+
+</nav>

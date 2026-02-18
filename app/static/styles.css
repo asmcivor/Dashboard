@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+}
+
+        /* ===== Full Width Top Section ===== */
+        .top-section {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* ===== Main Layout Section ===== */
+        .main-container {
+            display: flex;
+            min-height: 400px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: aqua;
+            padding: 20px;
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #bdc3c7;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+                background-color: lightgreen;
+                padding: 5px
+            }
+            .card {
+            background: lightcoral;
+           /* padding: 5px;*/
+            border-color: black;
+            border-radius: 50px;
+            text-align: center;
+            }
+            .main-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
