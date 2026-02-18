@@ -1,28 +1,38 @@
-<nav class="menu">
-    <h2>My App</h2>
+<!-- overlay (click outside to close) -->
+<div
+  class="fixed inset-0 bg-black/30 backdrop-blur-sm"
+  hx-get="/menu-close"
+  hx-target="#mobile-menu"
+  hx-swap="innerHTML"
+></div>
 
-    <a class="{% if active == 'dashboard' %}active{% endif %}"
-       hx-get="/dashboard"
-       hx-target="#content"
-       hx-push-url="true"
-       hx-on::click="htmx.ajax('GET','/menu?active=dashboard','#sidebar')">
-        Dashboard
-    </a>
+<!-- sliding panel -->
+<div
+  class="fixed top-0 right-0 w-72 max-w-full h-full bg-white shadow-2xl animate-[slideIn_.25s_ease-out] "
+>
+  <div class="p-5 space-y-4">
 
-    <a class="{% if active == 'reports' %}active{% endif %}"
-       hx-get="/reports"
-       hx-target="#content"
-       hx-push-url="true"
-       hx-on::click="htmx.ajax('GET','/menu?active=reports','#sidebar')">
-        Reports
-    </a>
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b pb-3">
+      <span class="font-semibold text-lg">Menu</span>
 
-    <a class="{% if active == 'settings' %}active{% endif %}"
-       hx-get="/settings"
-       hx-target="#content"
-       hx-push-url="true"
-       hx-on::click="htmx.ajax('GET','/menu?active=settings','#sidebar')">
-        Settings
-    </a>
+      <button
+        hx-get="/menu-close"
+        hx-target="#mobile-menu"
+        hx-swap="innerHTML"
+        class="text-gray-500 hover:text-gray-800"
+      >
+        ✕
+      </button>
+    </div>
 
-</nav>
+    <!-- Links -->
+    <nav class="flex flex-col space-y-3">
+      <a href="/" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Dashboard</a>
+      <a href="#" class="nav-link">Settings</a>
+      <a href="#" class="nav-link">About</a>
+    </nav>
+
+  </div>
+</div>

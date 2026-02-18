@@ -18,6 +18,16 @@ def home(request: Request):
         {"request": request}
     )
 
+@app.get("/menu", response_class=HTMLResponse)
+def mobile_menu(request: Request):
+    return templates.TemplateResponse(
+        "partials/menu.html",
+        {"request": request}
+    )
+
+@app.get("/menu-close", response_class=HTMLResponse)
+def mobile_menu_close(request: Request):
+    return HTMLResponse("")
 
 @app.get("/time", response_class=HTMLResponse)
 def get_time(request: Request):
