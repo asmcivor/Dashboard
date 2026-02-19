@@ -2,7 +2,7 @@
 
 
 .nav-link {
-  @apply text-gray-700 hover:text-blue-600 font-medium transition;
+  @apply text-white hover:text-blue-600 font-medium transition p-2;
 }
 
 @keyframes slideIn {
@@ -13,3 +13,54 @@
     transform: translateX(0);
   }
 }
+
+
+
+/* =========================
+   Design Tokens
+   ========================= */
+@theme {
+  /* Forest */
+  --color-forest-100: #dde8df;
+  --color-forest-300: #7fa883;
+  --color-forest-500: #4c7a4e;
+  --color-forest-700: #2f5d3a;
+  --color-forest-900: #1f3d2b;
+
+  /* Clay */
+  --color-clay-100: #f4e1d6;
+  --color-clay-300: #e2a07e;
+  --color-clay-500: #c26a3d;
+  --color-clay-700: #8b4a2f;
+  --color-clay-900: #5a2e1f;
+
+  /* Sand */
+  --color-sand-100: #f5f1eb;
+  --color-sand-300: #cfc8bf;
+  --color-sand-500: #8b8680;
+  --color-sand-700: #5c5955;
+  --color-sand-900: #2b2a28;
+
+  /* Moss */
+  --color-moss-300: #c3d08a;
+  --color-moss-500: #8fa64c;
+  --color-moss-700: #6b7a3a;
+
+  /* Semantic tokens (recommended) */
+  --color-bg: var(--color-sand-100);
+  --color-bg-muted: #ffffff;
+  --color-text: var(--color-sand-900);
+  --color-border: var(--color-sand-300);
+  --color-primary: var(--color-forest-700);
+  --color-primary-hover: var(--color-forest-900);
+  --color-secondary: var(--color-clay-500);
+  --color-accent: var(--color-moss-500);
+}
+
+.basebutton {
+                    color: white;
+                    padding-inline: 4;
+                    padding-block: 2;
+                    border-radius: 12px;
+                    border-color: darkblue;
+                  };
