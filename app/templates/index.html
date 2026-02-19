@@ -9,20 +9,15 @@
 
        <img class="size-28 shrink-0 p-1 " src="../static/images/mt-hood-small.jpg" alt="Mt Hood" />
       
-      <!-- Desktop Menu 
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="/" class="nav-link">Home</a>
-        <a href="#" class="nav-link">Dashboard</a>
-        <a href="#" class="nav-link">Settings</a>
-        <a href="#" class="nav-link">About</a>
-      </div> -->
-      <div class="text-lg font-bold">Alan McIvor
-      <br>
-        <div class="hidden md:flex font-medium">
-         <a href="/" class="nav-link">Home</a>
-        <a href="#" class="nav-link">Dashboard</a>
+      <div class="text-lg font-bold">Alan McIvor</div>
+
+        <div class="hidden md:flex font-medium p-4">
+          <a href="/" class="nav-link">Home</a>
+          <a href="#" class="nav-link">Dashboard</a>
+          <a href="#" class="nav-link">Settings</a>
+          <a href="#" class="nav-link">About</a>
         </div>
-      </div>
+      
       <!-- Mobile hamburger (HTMX) -->
       <div class="md:hidden">
         <button
@@ -46,16 +41,19 @@
   <!-- Mobile menu container -->
   <div id="mobile-menu" class="md:hidden"></div>
 </header>
+
 <button
     hx-get="/time"
     hx-target="#time-box"
     hx-swap="innerHTML"
-    class="bg-blue-600 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-700"
->
+    class="bg-primary hover:bg-primary-hover  text-white font-bold py-2 px-4 rounded" 
+   >
     Get Current Time
 </button>
+
 
 <div id="time-box" class="mt-6 p-4 bg-green-400 rounded-2xl shadow hover:bg-amber-300">
     Click the button to load time...
 </div>
+
 {% endblock %}
